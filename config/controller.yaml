@@ -1,0 +1,17 @@
+controller_list:
+ - name: r_leg_controller
+   action_ns: follow_joint_trajectory
+   type: FollowJointTrajectory
+   default: true
+   joints:
+     - rjoint1
+     - rjoint2
+     - rjoint3
+ - name: l_leg_controller
+   action_ns: follow_joint_trajectory
+   type: FollowJointTrajectory
+   default: true
+   joints:
+     - ljoint1
+     - ljoint2
+     - ljoint3

@@ -398,11 +398,4 @@
     <axis
       xyz="1 0 0" />
   </joint>
-
-  <!--CONTROL-->  
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/hmr</robotNamespace>
-    </plugin>
-  </gazebo>    
 </robot>
