@@ -41,6 +41,7 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="base_link"/>
   <joint
     name="ljoint1"
     type="continuous">
