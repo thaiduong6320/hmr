@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot 
+<robot
   name="hmr">
-  <material name="red">
+  <!-- <material name="red">
     <color rgba="1.0 0.0 0.0 1.0"/>
   </material>
   <material name="blue">
@@ -9,7 +9,7 @@
   </material>
   <material name="black">
     <color rgba="0.0 0.0 0.0 1.0"/>
-  </material>    
+  </material>       -->
   <link name="base">
   </link>
   <joint name="joint" type="fixed">
@@ -41,7 +41,9 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="base_link"/>
+  <gazebo reference="base_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
   <joint
     name="ljoint1"
     type="continuous">
@@ -66,10 +68,8 @@
         <mesh
           filename="package://hmr/meshes/llink1.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="blue">
+        <color rgba="0.0 0.0 1.0 1.0"/>
       </material>
     </visual>
     <collision>
@@ -81,7 +81,10 @@
           filename="package://hmr/meshes/llink1.STL" />
       </geometry>
     </collision>
-  </link>  
+  </link>
+  <gazebo reference="llink1">
+    <material>Gazebo/Blue</material>
+  </gazebo>  
   <joint
     name="ljoint2"
     type="continuous">
@@ -106,10 +109,8 @@
         <mesh
           filename="package://hmr/meshes/llink2.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="green">
+        <color rgba="0.0 1.0 0.0 1.0"/>
       </material>
     </visual>
     <collision>
@@ -122,6 +123,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="llink2">
+    <material>Gazebo/Green</material>
+  </gazebo>    
   <joint
     name="ljoint3"
     type="continuous">
@@ -146,10 +150,8 @@
         <mesh
           filename="package://hmr/meshes/llink3.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
       </material>
     </visual>
     <collision>
@@ -162,6 +164,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="llink3">
+    <material>Gazebo/Black</material>
+  </gazebo>    
   <!---->
   <joint
     name="rjoint1"
@@ -187,10 +192,8 @@
         <mesh
           filename="package://hmr/meshes/rlink1.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="blue">
+        <color rgba="0.0 0.0 1.0 1.0"/>
       </material>
     </visual>
     <collision>
@@ -203,6 +206,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="rlink1">
+    <material>Gazebo/Blue</material>
+  </gazebo>    
   <joint
     name="rjoint2"
     type="continuous">
@@ -227,10 +233,8 @@
         <mesh
           filename="package://hmr/meshes/rlink2.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="green">
+        <color rgba="0.0 1.0 0.0 1.0"/>
       </material>
     </visual>
     <collision>
@@ -243,6 +247,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="rlink2">
+    <material>Gazebo/Green</material>
+  </gazebo>    
   <joint
     name="rljoint3"
     type="continuous">
@@ -267,10 +274,8 @@
         <mesh
           filename="package://hmr/meshes/rlink3.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
       </material>
     </visual>
     <collision>
@@ -283,4 +288,7 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="rlink3">
+    <material>Gazebo/Black</material>
+  </gazebo>   
 </robot>
