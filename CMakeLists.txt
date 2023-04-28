@@ -10,8 +10,6 @@ find_package(gazebo REQUIRED)
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
 
-add_library(...)
-
 find_package(catkin REQUIRED)
 
 catkin_package()

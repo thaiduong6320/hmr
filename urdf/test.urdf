@@ -15,6 +15,7 @@
   <joint name="joint" type="fixed">
     <parent link="base"/>
     <child link="base_link"/>
+    <origin xyz="0.0 0.0 1.12" rpy="0.0 0.0 0.0"/>
   </joint>
   <!--BASE_LINK-->
   <link

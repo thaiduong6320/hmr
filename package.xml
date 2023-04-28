@@ -17,8 +17,7 @@ for hmr robot</p>
   <depend>joint_state_publisher_gui</depend>
   <depend>gazebo</depend>
   <depend>xacro</depend>
-  <build_depend>gazebo_ros</build_depend>
-  <run_depend>gazebo_ros</run_depend>
+  <depend>gazebo_ros</depend>
   <export>
     <architecture_independent />
   </export>
