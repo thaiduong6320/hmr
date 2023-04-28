@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot
   name="hmr">
+  <link name="base">
+    <inertial>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0" />
+      <inertia
+        ixx="0.0"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"
+        iyz="0.0"
+        izz="0.0" />
+    </inertial>    
+  </link>
+  <gazebo reference="base">
+    <material>Gazebo/Blue</material>
+  </gazebo>      
   <!--BASE_LINK-->
   <link
     name="base_link">
@@ -40,6 +59,14 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>  
+  <joint name="joint" type="fixed">
+    <parent link="base"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 1.12" rpy="0.0 0.0 0.0"/>
+  </joint>
   <!--LLINK1-->
   <link
     name="llink1">
@@ -79,6 +106,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="llink1">
+    <material>Gazebo/Blue</material>
+  </gazebo>    
   <joint
     name="ljoint1"
     type="continuous">
@@ -91,6 +121,7 @@
       link="llink1" />
     <axis
       xyz="1 0 0" />
+    <!-- <limit lower="-0.698" upper="1.047" effort="0.0" velocity="0.0"/> -->
   </joint>
   <!--LLINK2-->
   <link
@@ -131,6 +162,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="llink2">
+    <material>Gazebo/Blue</material>
+  </gazebo>   
   <joint
     name="ljoint2"
     type="continuous">
@@ -183,6 +217,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="llink3">
+    <material>Gazebo/Blue</material>
+  </gazebo>    
   <joint
     name="ljoint3"
     type="continuous">
@@ -235,6 +272,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="rlink1">
+    <material>Gazebo/Blue</material>
+  </gazebo>    
   <joint
     name="rjoint1"
     type="continuous">
@@ -287,6 +327,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="rlink2">
+    <material>Gazebo/Blue</material>
+  </gazebo>   
   <joint
     name="rjoint2"
     type="continuous">
@@ -339,6 +382,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="rlink3">
+    <material>Gazebo/Blue</material>
+  </gazebo>    
   <joint
     name="rljoint3"
     type="continuous">
@@ -351,5 +397,12 @@
       link="rlink3" />
     <axis
       xyz="1 0 0" />
-  </joint>  
+  </joint>
+
+  <!--CONTROL-->  
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/hmr</robotNamespace>
+    </plugin>
+  </gazebo>    
 </robot>

@@ -1,7 +1,7 @@
 <launch>
   <arg
     name="model" 
-    default="$(find hmr)/urdf/hmr.urdf" />
+    default="$(find hmr)/urdf/test2.urdf" />
   <arg
     name="gui"
     default="True" />
@@ -10,7 +10,7 @@
     default="$(find hmr)/rviz/urdf.rviz" />
   <param
     name="robot_description"
-    textfile="$(find hmr)/urdf/hmr.urdf" />
+    textfile="$(find hmr)/urdf/test2.urdf" />
   <param
     name="use_gui"
     value="$(arg gui)" />
