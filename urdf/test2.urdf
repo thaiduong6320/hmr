@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot
+<robot xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#xacro"
   name="hmr">
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/hmr</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>  
   <link name="base">
     <inertial>
       <origin
@@ -121,7 +130,7 @@
       link="llink1" />
     <axis
       xyz="1 0 0" />
-    <!-- <limit lower="-0.698" upper="1.047" effort="0.0" velocity="0.0"/> -->
+    <limit lower="-0.6981" upper="1.0472" effort="2.0" velocity="0.2"/>
   </joint>
   <!--LLINK2-->
   <link
@@ -177,6 +186,7 @@
       link="llink2" />
     <axis
       xyz="1 0 0" />
+    <limit lower="-1.0472" upper="0.0" effort="2.0" velocity="0.2"/>
   </joint>
   <!--LLINK3-->
   <link
@@ -232,6 +242,7 @@
       link="llink3" />
     <axis
       xyz="1 0 0" />
+    <limit lower="-0.8727" upper="0.5236" effort="2.0" velocity="0.2"/>
   </joint>
   <!--RLINK1-->
   <link
@@ -287,6 +298,7 @@
       link="rlink1" />
     <axis
       xyz="1 0 0" />
+    <limit lower="-0.6981" upper="1.0472" effort="2.0" velocity="0.2"/>
   </joint>
   <!--RLINK2-->
   <link
@@ -342,6 +354,7 @@
       link="rlink2" />
     <axis
       xyz="1 0 0" />
+    <limit lower="-1.0472" upper="0.0" effort="2.0" velocity="0.2"/>
   </joint>  
   <!--RLINK3-->
   <link
@@ -397,5 +410,6 @@
       link="rlink3" />
     <axis
       xyz="1 0 0" />
+    <limit lower="-0.8727" upper="0.5236" effort="2.0" velocity="0.2"/>  
   </joint>
 </robot>

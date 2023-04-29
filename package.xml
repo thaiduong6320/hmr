@@ -18,6 +18,7 @@ for hmr robot</p>
   <depend>gazebo</depend>
   <depend>xacro</depend>
   <depend>gazebo_ros</depend>
+  <depend>gazebo_ros_control</depend>
   <export>
     <architecture_independent />
   </export>

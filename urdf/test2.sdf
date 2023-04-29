@@ -1,0 +1,440 @@
+<sdf version='1.7'>
+  <model name='hmr'>
+    <link name='base'>
+      <inertial>
+        <pose>-0.000103 -0.018475 1.1129 0 -0 0</pose>
+        <mass>0.933837</mass>
+        <inertia>
+          <ixx>0.00139201</ixx>
+          <ixy>-2.82902e-12</ixy>
+          <ixz>4.14929e-12</ixz>
+          <iyy>0.00736197</iyy>
+          <iyz>-8.08859e-10</iyz>
+          <izz>0.00614175</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 1.12 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 1.12 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ljoint1' type='revolute'>
+      <pose relative_to='base'>0.12 0.06 1.06 1.5708 -0 0</pose>
+      <parent>base</parent>
+      <child>llink1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>2</effort>
+          <velocity>0.2</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='llink1'>
+      <pose relative_to='ljoint1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.05 -0.248501 5.3e-05 0 -0 0</pose>
+        <mass>0.509664</mass>
+        <inertia>
+          <ixx>0.00405279</ixx>
+          <ixy>-5.17821e-16</ixy>
+          <ixz>-1.86028e-17</ixz>
+          <iyy>0.00025714</iyy>
+          <iyz>2.2041e-06</iyz>
+          <izz>0.00418847</izz>
+        </inertia>
+      </inertial>
+      <collision name='llink1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/llink1.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='llink1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/llink1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ljoint2' type='revolute'>
+      <pose relative_to='llink1'>0 -0.5 0 0 -0 0</pose>
+      <parent>llink1</parent>
+      <child>llink2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>2</effort>
+          <velocity>0.2</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='llink2'>
+      <pose relative_to='ljoint2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.050055 -0.234394 0.0055 0 -0 0</pose>
+        <mass>0.442266</mass>
+        <inertia>
+          <ixx>0.0040118</ixx>
+          <ixy>-5.09698e-16</ixy>
+          <ixz>-2.77164e-17</ixz>
+          <iyy>0.000241596</iyy>
+          <iyz>-1.10279e-06</iyz>
+          <izz>0.00416183</izz>
+        </inertia>
+      </inertial>
+      <collision name='llink2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/llink2.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='llink2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/llink2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='ljoint3' type='revolute'>
+      <pose relative_to='llink2'>0 -0.5 0 0 -0 0</pose>
+      <parent>llink2</parent>
+      <child>llink3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>2</effort>
+          <velocity>0.2</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='llink3'>
+      <pose relative_to='ljoint3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.050147 -0.035104 0.040519 0 -0 0</pose>
+        <mass>0.164387</mass>
+        <inertia>
+          <ixx>0.0003904</ixx>
+          <ixy>6.46554e-18</ixy>
+          <ixz>7.16521e-17</ixz>
+          <iyy>0.000442517</iyy>
+          <iyz>-8.18654e-11</iyz>
+          <izz>8.27553e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='llink3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/llink3.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='llink3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/llink3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rjoint1' type='revolute'>
+      <pose relative_to='base'>-0.12 0.06 1.06 1.5708 -0 0</pose>
+      <parent>base</parent>
+      <child>rlink1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>2</effort>
+          <velocity>0.2</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rlink1'>
+      <pose relative_to='rjoint1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.05 -0.248501 5.3e-05 0 -0 0</pose>
+        <mass>0.509664</mass>
+        <inertia>
+          <ixx>0.00405279</ixx>
+          <ixy>-5.17781e-16</ixy>
+          <ixz>-1.86069e-17</ixz>
+          <iyy>0.00025714</iyy>
+          <iyz>2.2041e-06</iyz>
+          <izz>0.00418847</izz>
+        </inertia>
+      </inertial>
+      <collision name='rlink1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/rlink1.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rlink1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/rlink1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rjoint2' type='revolute'>
+      <pose relative_to='rlink1'>0 -0.5 0 0 -0 0</pose>
+      <parent>rlink1</parent>
+      <child>rlink2</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>2</effort>
+          <velocity>0.2</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rlink2'>
+      <pose relative_to='rjoint2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.049945 -0.234394 0.0055 0 -0 0</pose>
+        <mass>0.442266</mass>
+        <inertia>
+          <ixx>0.0040118</ixx>
+          <ixy>-5.09804e-16</ixy>
+          <ixz>-2.77168e-17</ixz>
+          <iyy>0.000241596</iyy>
+          <iyz>-1.10279e-06</iyz>
+          <izz>0.00416183</izz>
+        </inertia>
+      </inertial>
+      <collision name='rlink2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/rlink2.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rlink2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/rlink2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='rljoint3' type='revolute'>
+      <pose relative_to='rlink2'>0 -0.5 0 0 -0 0</pose>
+      <parent>rlink2</parent>
+      <child>rlink3</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>2</effort>
+          <velocity>0.2</velocity>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rlink3'>
+      <pose relative_to='rljoint3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.049853 -0.035104 0.040519 0 -0 0</pose>
+        <mass>0.164387</mass>
+        <inertia>
+          <ixx>0.0003904</ixx>
+          <ixy>6.46332e-18</ixy>
+          <ixz>7.1649e-17</ixz>
+          <iyy>0.000442517</iyy>
+          <iyz>-8.18654e-11</iyz>
+          <izz>8.27553e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rlink3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/rlink3.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rlink3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://hmr/meshes/rlink3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
