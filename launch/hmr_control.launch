@@ -13,8 +13,12 @@
 	  output="screen" 
     ns="/hmr" 
     args="joint_state_controller
-	  		  joint1_position_controller
-	  		  joint2_position_controller"/>
+	  		  ljoint1_position_controller
+          ljoint2_position_controller
+          ljoint3_position_controller
+          rjoint1_position_controller
+          rjoint2_position_controller
+	  		  rjoint3_position_controller"/>
 
   <!-- convert joint states to TF transforms for rviz, etc -->
   <node 

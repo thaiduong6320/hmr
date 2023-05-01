@@ -5,21 +5,33 @@ hmr:
     publish_rate: 50  
 
   # Position Controllers ---------------------------------------
-  joint1_position_controller:
-    type: effort_controllers/JointPositionController
+  ljoint1_position_controller:
+    type: position_controllers/JointTrajectoryController
     joint: ljoint1
-  joint2_position_controller:
-    type: effort_controllers/JointPositionController
+    # gains:
+    #   ljoint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
+  ljoint2_position_controller:
+    type: position_controllers/JointTrajectoryController
     joint: ljoint2
-  joint1_position_controller:
-    type: effort_controllers/JointPositionController
+    # gains:
+    #   ljoint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
+  ljoint3_position_controller:
+    type: position_controllers/JointTrajectoryController
     joint: ljoint3
-  joint2_position_controller:
-    type: effort_controllers/JointPositionController
+    # gains:
+    #   ljoint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
+  rjoint1_position_controller:
+    type: position_controllers/JointTrajectoryController
     joint: rjoint1
-  joint1_position_controller:
-    type: effort_controllers/JointPositionController
+    # gains:
+    #   rjoint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
+  rjoint2_position_controller:
+    type: position_controllers/JointTrajectoryController
     joint: rjoint2
-  joint2_position_controller:
-    type: effort_controllers/JointPositionController
+    # gains:
+    #   rjoint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
+  rjoint3_position_controller:
+    type: position_controllers/JointTrajectoryController
     joint: rjoint3        
+    # gains:
+    #   rjoint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
