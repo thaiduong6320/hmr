@@ -5,14 +5,24 @@ project(hmr)
 find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
 )
+find_package(robot_state_publisher REQUIRED)
 find_package(gazebo_ros_control REQUIRED)
 find_package(gazebo REQUIRED)
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
 
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED
+  forward_command_controller
+  hardware_interface
+  pluginlib
+  roscpp
+)
 
-catkin_package()
+catkin_package(
+  
+)
+
+# Specify header include paths
 
 find_package(roslaunch)
 
