@@ -15,6 +15,11 @@
     </plugin>
   </gazebo>  
 
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base"/>
+  </joint>
   <link name="base">
     <!-- <inertial>
       <origin
