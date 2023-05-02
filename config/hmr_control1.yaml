@@ -8,30 +8,30 @@ hmr:
   ljoint1_position_controller:
     type: position_controllers/JointTrajectoryController
     joint: ljoint1
-    gains:
-      ljoint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
+    # gains:
+    #   ljoint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
   ljoint2_position_controller:
     type: position_controllers/JointTrajectoryController
     joint: ljoint2
-    gains:
-      ljoint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
+    # gains:
+    #   ljoint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
   ljoint3_position_controller:
     type: position_controllers/JointTrajectoryController
     joint: ljoint3
-    gains:
-      ljoint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
+    # gains:
+    #   ljoint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
   rjoint1_position_controller:
     type: position_controllers/JointTrajectoryController
     joint: rjoint1
-    gains:
-      rjoint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
+    # gains:
+    #   rjoint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
   rjoint2_position_controller:
     type: position_controllers/JointTrajectoryController
     joint: rjoint2
-    gains:
-      rjoint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
+    # gains:
+    #   rjoint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
   rjoint3_position_controller:
     type: position_controllers/JointTrajectoryController
     joint: rjoint3        
-    gains:
-      rjoint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
+    # gains:
+    #   rjoint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
