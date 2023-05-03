@@ -1,16 +1,16 @@
 <launch>
   <arg
     name="model" 
-    default="$(find hmr_description)/urdf/test2.xacro" />
+    default="$(find hmr)/hmr_description/urdf/test2.xacro" />
   <arg
     name="gui"
     default="True" />
   <arg 
     name="rvizconfig" 
-    default="$(find hmr_description)/rviz/urdf.rviz" />
+    default="$(find hmr)/hmr_description/rviz/urdf.rviz" />
   <param
     name="robot_description"
-    textfile="$(find hmr_description)/urdf/test2.xacro" />
+    textfile="$(find hmr)/hmr_description/urdf/test2.xacro" />
   <param
     name="use_gui"
     value="$(arg gui)" />

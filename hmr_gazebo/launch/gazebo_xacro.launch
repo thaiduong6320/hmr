@@ -18,12 +18,12 @@
 
   <!-- Load the URDF into the ROS Parameter Server -->
   <param name="robot_description"
-    command="$(find xacro)/xacro --inorder '$(find hmr_description)/urdf/test2.xacro'" />
+    command="$(find xacro)/xacro --inorder '$(find hmr)/hmr_description/urdf/test2.xacro'" />
   <node 
     name="spawn_urdf" 
     pkg="gazebo_ros" 
     type="spawn_model" 
     args="-param robot_description -urdf -model hmr" />     
 
-  <include file="$(find hmr_control)/launch/hmr_control.launch" />
+  <include file="$(find hmr)/hmr_control/launch/hmr_control.launch" />
 </launch>
