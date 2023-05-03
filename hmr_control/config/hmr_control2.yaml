@@ -1,0 +1,16 @@
+joint_state_controller:
+  type: "joint_state_controller/JointStateController"
+  publish_rate: 125  
+
+# this is a position (trajectory) controller controller. 
+# Because all three joints are controlled at the same time 
+# If you want, you can load controller for each joint separately
+hmr_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - ljoint1
+    - ljoint2
+    - ljoint3
+    - rjoint1
+    - rjoint2
+    - rjoint3    
