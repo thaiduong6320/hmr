@@ -59,6 +59,49 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: ""
+        base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        llink1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        llink2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        llink3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rlink1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rlink2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rlink3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -66,7 +109,7 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Filter (blacklist): ""
       Filter (whitelist): ""
       Frame Timeout: 15
@@ -81,7 +124,7 @@ Visualization Manager:
       Tree:
         {}
       Update Interval: 0
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -110,7 +153,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 10
+      Distance: 3.1647839546203613
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1

@@ -1,44 +1,64 @@
-hmr:
-  # Publish all joint states -----------------------------------
+# Publish all joint states -----------------------------------
+
   joint_state_controller:
     type: joint_state_controller/JointStateController
     publish_rate: 50  
 
-  # Position Controllers ---------------------------------------
-  ljoint1_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: ljoint1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-    # gains:
-    #   ljoint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
-  ljoint2_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: ljoint2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-    # gains:
-    #   ljoint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
-  ljoint3_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: ljoint3
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-    # gains:
-    #   ljoint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
-  rjoint1_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: rjoint1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-    # gains:
-    #   rjoint1: {p: 100,  d: 1, i: 1, i_clamp: 1}
-  rjoint2_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: rjoint2
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-    # gains:
-    #   rjoint2: {p: 100,  d: 1, i: 1, i_clamp: 1}
-  rjoint3_position_controller:
-    type: effort_controllers/JointPositionController
-    joint: rjoint3        
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-    # gains:
-    #   rjoint3: {p: 100,  d: 1, i: 1, i_clamp: 1}
-    # position_controllers/JointTrajectoryController
+  # Gazebo Sim - Right and Left Joint Effort Trajectory Controller -------------------
+
+  left_position_trajectory_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - ljoint1
+      - ljoint2
+      - ljoint3
+    constraints:
+      goal_time: 1.0                   # Defaults to zero
+      stopped_velocity_tolerance: 0.03 # Defaults to 0.01
+      ljoint1:
+        trajectory: 0.05 
+        goal: 0.02       
+      ljoint2:
+        trajectory: 0.05 
+        goal: 0.02       
+      ljoint3:
+        trajectory: 0.05 
+        goal: 0.02          
+
+    gains: # Needed to map position+velocity commands to an effort command
+      ljoint1: {p: 700,  i: 0.01, d: 25, i_clamp: 1}
+      ljoint2: {p: 10000,  i: 100, d: 100, i_clamp: 1}
+      ljoint3: {p: 4500,  i: 35, d: 1, i_clamp: 1}
+
+    state_publish_rate:  25 # Defaults to 50
+    action_monitor_rate: 10 # Defaults to 20
+    hold_trajectory_duration: 0 # Defaults to 0.5
+
+  right_position_trajectory_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - rjoint1
+      - rjoint2
+      - rjoint3
+
+    constraints:
+      goal_time: 1.0                   
+      stopped_velocity_tolerance: 0.03 
+      rjoint1:
+        trajectory: 0.05 
+        goal: 0.02       
+      rjoint2:
+        trajectory: 0.05 
+        goal: 0.02       
+      rjoint3:
+        trajectory: 0.05 
+        goal: 0.02          
+
+    gains: # Needed to map position+velocity commands to an effort command
+      rjoint1: {p: 700,  i: 0.01, d: 100, i_clamp: 1}
+      rjoint2: {p: 10000,  i: 100, d: 100, i_clamp: 1}
+      rjoint3: {p: 4500,  i: 35, d: 1, i_clamp: 1}
+
+    state_publish_rate:  25 # Defaults to 50
+    action_monitor_rate: 10 # Defaults to 20
+    hold_trajectory_duration: 0 # Defaults to 0.5
