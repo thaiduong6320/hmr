@@ -4,6 +4,8 @@ project(hmr)
 
 find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
+  roscpp
+  std_msgs
 )
 find_package(robot_state_publisher REQUIRED)
 find_package(gazebo_ros_control REQUIRED)
@@ -15,7 +17,6 @@ find_package(catkin REQUIRED
   forward_command_controller
   hardware_interface
   pluginlib
-  roscpp
 )
 
 catkin_package(
