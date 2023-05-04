@@ -61,7 +61,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/base_link.STL" />
+          filename="package://hmr/hmr_description/meshesbase_link.STL" />
       </geometry>
       <material name="red">
         <color rgba="1.0 0.0 0.0 1.0"/>
@@ -73,7 +73,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/base_link.STL" />
+          filename="package://hmr/hmr_description/meshesbase_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -108,7 +108,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/llink1.STL" />
+          filename="package://hmr/hmr_description/meshesllink1.STL" />
       </geometry>
       <material name="blue">
         <color rgba="0.0 0.0 1.0 1.0"/>
@@ -120,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/llink1.STL" />
+          filename="package://hmr/hmr_description/meshesllink1.STL" />
       </geometry>
     </collision>
   </link>
@@ -164,7 +164,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/llink2.STL" />
+          filename="package://hmr/hmr_description/meshesllink2.STL" />
       </geometry>
       <material name="green">
         <color rgba="0.0 1.0 0.0 1.0"/>
@@ -176,7 +176,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/llink2.STL" />
+          filename="package://hmr/hmr_description/meshesllink2.STL" />
       </geometry>
     </collision>
   </link>
@@ -220,7 +220,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/llink3.STL" />
+          filename="package://hmr/hmr_description/meshesllink3.STL" />
       </geometry>
       <material name="black">
         <color rgba="0.0 0.0 0.0 1.0"/>
@@ -232,7 +232,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/llink3.STL" />
+          filename="package://hmr/hmr_description/meshesllink3.STL" />
       </geometry>
     </collision>
   </link>
@@ -276,7 +276,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/rlink1.STL" />
+          filename="package://hmr/hmr_description/meshesrlink1.STL" />
       </geometry>
       <material name="blue">
         <color rgba="0.0 0.0 1.0 1.0"/>
@@ -288,7 +288,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/rlink1.STL" />
+          filename="package://hmr/hmr_description/meshesrlink1.STL" />
       </geometry>
     </collision>
   </link>
@@ -332,7 +332,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/rlink2.STL" />
+          filename="package://hmr/hmr_description/meshesrlink2.STL" />
       </geometry>
       <material name="green">
         <color rgba="0.0 1.0 0.0 1.0"/>
@@ -344,7 +344,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/rlink2.STL" />
+          filename="package://hmr/hmr_description/meshesrlink2.STL" />
       </geometry>
     </collision>
   </link>
@@ -388,7 +388,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/rlink3.STL" />
+          filename="package://hmr/hmr_description/meshesrlink3.STL" />
       </geometry>
       <material name="black">
         <color rgba="0.0 0.0 0.0 1.0"/>
@@ -400,7 +400,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://hmr/meshes/rlink3.STL" />
+          filename="package://hmr/hmr_description/meshesrlink3.STL" />
       </geometry>
     </collision>
   </link>
