@@ -6,26 +6,23 @@ find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
   roscpp
   std_msgs
-)
-find_package(robot_state_publisher REQUIRED)
-find_package(gazebo_ros_control REQUIRED)
-find_package(gazebo REQUIRED)
-
-include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
-
-find_package(catkin REQUIRED
+  rospy
+  genmsg
+  robot_state_publisher
+  gazebo_ros_control
+  gazebo 
   forward_command_controller
   hardware_interface
   pluginlib
+  roslaunch
 )
+generate_messages(DEPENDENCIES std_msgs)
+
+include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
 
 catkin_package(
   
 )
-
-# Specify header include paths
-
-find_package(roslaunch)
 
 foreach(dir config launch meshes urdf)
 	install(DIRECTORY ${dir}/

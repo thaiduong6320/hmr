@@ -19,6 +19,9 @@ for hmr robot</p>
   <depend>xacro</depend>
   <depend>gazebo_ros</depend>
   <depend>gazebo_ros_control</depend>
+  <!-- <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend> -->
 
   <build_depend>forward_command_controller</build_depend> 
   <build_depend>hardware_interface</build_depend>   
