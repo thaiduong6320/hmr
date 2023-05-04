@@ -64,8 +64,8 @@
         <mesh
           filename="package://hmr/hmr_description/meshes/base_link.STL" />
       </geometry>
-      <material name="red">
-        <color rgba="1.0 0.0 0.0 1.0"/>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
       </material>
     </visual>
     <collision>
@@ -131,7 +131,7 @@
   </gazebo>    
   <joint
     name="ljoint1"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.12 0.06 -0.06"
       rpy="1.5708 0 0" />
@@ -141,7 +141,7 @@
       link="llink1" />
     <axis
       xyz="1 0 0" />
-    <limit lower="-0.6981" upper="1.0472" effort="2.0" velocity="0.2"/>
+    <limit lower="-0.6981" upper="0.5236" effort="2.0" velocity="0.2"/>
   </joint>
   <!--LLINK2-->
   <link
@@ -187,7 +187,7 @@
   </gazebo>   
   <joint
     name="ljoint2"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 -0.5 0"
       rpy="0 0 0" />
@@ -197,7 +197,7 @@
       link="llink2" />
     <axis
       xyz="1 0 0" />
-    <limit lower="-1.0472" upper="0.0" effort="2.0" velocity="0.2"/>
+    <limit lower="0.0" upper="1.0472" effort="2.0" velocity="0.2"/>
   </joint>
   <!--LLINK3-->
   <link
@@ -224,8 +224,8 @@
         <mesh
           filename="package://hmr/hmr_description/meshes/llink3.STL" />
       </geometry>
-      <material name="black">
-        <color rgba="0.0 0.0 0.0 1.0"/>
+      <material name="red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
       </material>
     </visual>
     <collision>
@@ -243,7 +243,7 @@
   </gazebo>    
   <joint
     name="ljoint3"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 -0.5 0"
       rpy="0 0 0" />
@@ -253,7 +253,7 @@
       link="llink3" />
     <axis
       xyz="1 0 0" />
-    <limit lower="-0.8727" upper="0.5236" effort="2.0" velocity="0.2"/>
+    <limit lower="-0.5236" upper="0.8727" effort="2.0" velocity="0.2"/>
   </joint>
   <!--RLINK1-->
   <link
@@ -299,7 +299,7 @@
   </gazebo>    
   <joint
     name="rjoint1"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="-0.12 0.06 -0.06"
       rpy="1.5708 0 0" />
@@ -309,7 +309,7 @@
       link="rlink1" />
     <axis
       xyz="1 0 0" />
-    <limit lower="-0.6981" upper="1.0472" effort="2.0" velocity="0.2"/>
+    <limit lower="-0.6981" upper="0.5236" effort="2.0" velocity="0.2"/>
   </joint>
   <!--RLINK2-->
   <link
@@ -355,7 +355,7 @@
   </gazebo>   
   <joint
     name="rjoint2"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 -0.5 0"
       rpy="0 0 0" />
@@ -365,7 +365,7 @@
       link="rlink2" />
     <axis
       xyz="1 0 0" />
-    <limit lower="-1.0472" upper="0.0" effort="2.0" velocity="0.2"/>
+    <limit lower="0.0" upper="1.0472" effort="2.0" velocity="0.2"/>
   </joint>  
   <!--RLINK3-->
   <link
@@ -392,8 +392,8 @@
         <mesh
           filename="package://hmr/hmr_description/meshes/rlink3.STL" />
       </geometry>
-      <material name="black">
-        <color rgba="0.0 0.0 0.0 1.0"/>
+      <material name="red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
       </material>
     </visual>
     <collision>
@@ -411,7 +411,7 @@
   </gazebo>    
   <joint
     name="rjoint3"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 -0.5 0"
       rpy="0 0 0" />
@@ -421,7 +421,7 @@
       link="rlink3" />
     <axis
       xyz="1 0 0" />
-    <limit lower="-0.8727" upper="0.5236" effort="2.0" velocity="0.2"/>  
+    <limit lower="-0.5236" upper="0.8727" effort="2.0" velocity="0.2"/>  
   </joint>
   <!--  -->
   <transmission name="ltran1">
