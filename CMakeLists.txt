@@ -10,19 +10,12 @@ find_package(catkin REQUIRED COMPONENTS
   genmsg
   robot_state_publisher
   gazebo_ros_control
-  gazebo 
   forward_command_controller
   hardware_interface
   pluginlib
   roslaunch
 )
-generate_messages(DEPENDENCIES std_msgs)
-
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
-
-catkin_package(
-  
-)
 
 foreach(dir config launch meshes urdf)
 	install(DIRECTORY ${dir}/
