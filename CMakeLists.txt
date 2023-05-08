@@ -29,7 +29,7 @@ catkin_package(
 )
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS})
 
-add_executable(main hmr_description/launch/main.cpp)
+add_executable(main hmr_description/src/main.cpp)
 target_link_libraries(main ${catkin_LIBRARIES})
 # add_dependencies(talker beginner_tutorials_generate_messages_cpp)
 
