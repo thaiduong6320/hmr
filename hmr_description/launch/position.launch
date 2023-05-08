@@ -1,0 +1,7 @@
+<launch>    
+  <node 
+    pkg="hmr" 
+    type="main.py"
+    name="main"
+    output="screen" />
+</launch>
