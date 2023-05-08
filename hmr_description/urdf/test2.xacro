@@ -70,7 +70,7 @@
   <joint name="joint" type="fixed">
     <parent link="base"/>
     <child link="base_link"/>
-    <origin xyz="0.0 0.0 1.2 " rpy="0.0 0.0 3.1416"/> 
+    <origin xyz="0.0 0.0 1.4 " rpy="0.0 0.0 3.1416"/> 
     <!-- 1.12 -->
   </joint>
   <!--LLINK1-->

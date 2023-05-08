@@ -24,6 +24,12 @@
     pkg="gazebo_ros" 
     type="spawn_model" 
     args="-param robot_description -urdf -model hmr" />     
-
+    
   <include file="$(find hmr)/hmr_control/launch/hmr_control.launch" />
+  <node 
+    file= "$(find hmr)/hmr_description/src/main.py"
+    pkg="src" 
+    type="main.py"
+    name="main"
+    output="screen" />
 </launch>
