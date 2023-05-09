@@ -1,83 +1,58 @@
 #include "ros/ros.h"
-#include "std_msgs/String.h"
+#include "std_msgs/Float64.h"
 
 #include <sstream>
 
-/**
- * This tutorial demonstrates simple sending of messages over the ROS system.
- */
 int main(int argc, char **argv)
 {
-  /**
-   * The ros::init() function needs to see argc and argv so that it can perform
-   * any ROS arguments and name remapping that were provided at the command line.
-   * For programmatic remappings you can use a different version of init() which takes
-   * remappings directly, but for most command-line programs, passing argc and argv is
-   * the easiest way to do it.  The third argument to init() is the name of the node.
-   *
-   * You must call one of the versions of ros::init() before using any other
-   * part of the ROS system.
-   */
-  ros::init(argc, argv, "talker");
+  ros::init(argc, argv, "control");
 
-  /**
-   * NodeHandle is the main access point to communications with the ROS system.
-   * The first NodeHandle constructed will fully initialize this node, and the last
-   * NodeHandle destructed will close down the node.
-   */
-  ros::NodeHandle n;
+  ros::NodeHandle nh;
 
-  /**
-   * The advertise() function is how you tell ROS that you want to
-   * publish on a given topic name. This invokes a call to the ROS
-   * master node, which keeps a registry of who is publishing and who
-   * is subscribing. After this advertise() call is made, the master
-   * node will notify anyone who is trying to subscribe to this topic name,
-   * and they will in turn negotiate a peer-to-peer connection with this
-   * node.  advertise() returns a Publisher object which allows you to
-   * publish messages on that topic through a call to publish().  Once
-   * all copies of the returned Publisher object are destroyed, the topic
-   * will be automatically unadvertised.
-   *
-   * The second parameter to advertise() is the size of the message queue
-   * used for publishing messages.  If messages are published more quickly
-   * than we can send them, the number here specifies how many messages to
-   * buffer up before throwing some away.
-   */
-  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  ros::Publisher lpub1 = nh.advertise<std_msgs::Float64>("/hmr/ljoint1_position_controller/command", 1000);
+  ros::Publisher lpub2 = nh.advertise<std_msgs::Float64>("/hmr/ljoint2_position_controller/command", 1000);
+  ros::Publisher lpub3 = nh.advertise<std_msgs::Float64>("/hmr/ljoint3_position_controller/command", 1000);
+  ros::Publisher rpub1 = nh.advertise<std_msgs::Float64>("/hmr/rjoint1_position_controller/command", 1000);
+  ros::Publisher rpub2 = nh.advertise<std_msgs::Float64>("/hmr/rjoint2_position_controller/command", 1000);
+  ros::Publisher rpub3 = nh.advertise<std_msgs::Float64>("/hmr/rjoint3_position_controller/command", 1000);
 
   ros::Rate loop_rate(10);
 
-  /**
-   * A count of how many messages we have sent. This is used to create
-   * a unique string for each message.
-   */
-  int count = 0;
   while (ros::ok())
   {
-    /**
-     * This is a message object. You stuff it with data, and then publish it.
-     */
-    std_msgs::String msg;
+ 
+    std_msgs::Float64 lmsg1;
+    std_msgs::Float64 lmsg2;
+    std_msgs::Float64 lmsg3;
+    std_msgs::Float64 rmsg1;
+    std_msgs::Float64 rmsg2;
+    std_msgs::Float64 rmsg3;
 
-    std::stringstream ss;
-    ss << "hello world " << count;
-    msg.data = ss.str();
+    lmsg1.data = 3.141592654*(-557)/3600;
+    lmsg2.data = 3.141592654*39.38/180;
+    lmsg3.data = 3.141592654*(-11.53)/180;
+    rmsg1.data = 3.141592654*3.69/180;
+    rmsg2.data = 3.141592654*(26.31)/180;
+    rmsg3.data = 3.141592654*(-29.99)/180;
 
-    ROS_INFO("%s", msg.data.c_str());
-
-    /**
-     * The publish() function is how you send messages. The parameter
-     * is the message object. The type of this object must agree with the type
-     * given as a template parameter to the advertise<>() call, as was done
-     * in the constructor above.
-     */
-    chatter_pub.publish(msg);
+    ROS_INFO("%s", lmsg1.data.c_str());
+    ROS_INFO("%s", lmsg2.data.c_str());
+    ROS_INFO("%s", lmsg3.data.c_str());
+    ROS_INFO("%s", rmsg1.data.c_str());
+    ROS_INFO("%s", rmsg2.data.c_str());
+    ROS_INFO("%s", rmsg3.data.c_str());
+     
+    lpub1.publish(lmsg1);
+    lpub2.publish(lmsg2);
+    lpub3.publish(lmsg3);
+    rpub1.publish(rmsg1);
+    rpub2.publish(rmsg2);
+    rpub3.publish(rmsg3);
 
     ros::spinOnce();
 
     loop_rate.sleep();
-    ++count;
+
   }
 
 

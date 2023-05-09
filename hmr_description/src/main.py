@@ -14,7 +14,6 @@ def control():
     rospy.init_node('hmr_control', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
-        #hello_str = "hello world %s" % rospy.get_time()
         lposition1 = math.pi*(-557)/3600
         lposition2 = math.pi*39.38/180
         lposition3 = math.pi*(-11.53)/180
