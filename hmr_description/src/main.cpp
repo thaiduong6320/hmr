@@ -9,12 +9,12 @@ int main(int argc, char **argv)
 
   ros::NodeHandle nh;
 
-  ros::Publisher lpub1 = nh.advertise<std_msgs::Float64>("/hmr/ljoint1_position_controller/command", 1000);
-  ros::Publisher lpub2 = nh.advertise<std_msgs::Float64>("/hmr/ljoint2_position_controller/command", 1000);
-  ros::Publisher lpub3 = nh.advertise<std_msgs::Float64>("/hmr/ljoint3_position_controller/command", 1000);
-  ros::Publisher rpub1 = nh.advertise<std_msgs::Float64>("/hmr/rjoint1_position_controller/command", 1000);
-  ros::Publisher rpub2 = nh.advertise<std_msgs::Float64>("/hmr/rjoint2_position_controller/command", 1000);
-  ros::Publisher rpub3 = nh.advertise<std_msgs::Float64>("/hmr/rjoint3_position_controller/command", 1000);
+  ros::Publisher lpub1 = nh.advertise<std_msgs::Float64>("/hmr/ljoint1_position_controller/command", 10);
+  ros::Publisher lpub2 = nh.advertise<std_msgs::Float64>("/hmr/ljoint2_position_controller/command", 10);
+  ros::Publisher lpub3 = nh.advertise<std_msgs::Float64>("/hmr/ljoint3_position_controller/command", 10);
+  ros::Publisher rpub1 = nh.advertise<std_msgs::Float64>("/hmr/rjoint1_position_controller/command", 10);
+  ros::Publisher rpub2 = nh.advertise<std_msgs::Float64>("/hmr/rjoint2_position_controller/command", 10);
+  ros::Publisher rpub3 = nh.advertise<std_msgs::Float64>("/hmr/rjoint3_position_controller/command", 10);
 
   ros::Rate loop_rate(10);
 
@@ -35,12 +35,12 @@ int main(int argc, char **argv)
     rmsg2.data = 3.141592654*(26.31)/180;
     rmsg3.data = 3.141592654*(-29.99)/180;
 
-    ROS_INFO("%s", lmsg1.data.c_str());
-    ROS_INFO("%s", lmsg2.data.c_str());
-    ROS_INFO("%s", lmsg3.data.c_str());
-    ROS_INFO("%s", rmsg1.data.c_str());
-    ROS_INFO("%s", rmsg2.data.c_str());
-    ROS_INFO("%s", rmsg3.data.c_str());
+    ROS_INFO("%f", lmsg1.data);
+    ROS_INFO("%f", lmsg2.data);
+    ROS_INFO("%f", lmsg3.data);
+    ROS_INFO("%f", rmsg1.data);
+    ROS_INFO("%f", rmsg2.data);
+    ROS_INFO("%f", rmsg3.data);
      
     lpub1.publish(lmsg1);
     lpub2.publish(lmsg2);
