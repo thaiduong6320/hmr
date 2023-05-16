@@ -24,7 +24,20 @@
   </link>
   <gazebo reference="base">
     <material>Gazebo/Blue</material>
-  </gazebo>      
+  </gazebo>
+  <!--IMU-->
+
+  <gazebo>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>base</bodyName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>20.0</updateRate>
+    </plugin>
+  </gazebo>
+
   <!--BASE_LINK-->
   <link
     name="base_link">
@@ -128,6 +141,7 @@
     <axis
       xyz="1 0 0" />
     <limit lower="-0.6981" upper="0.5236" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
   <!--LLINK2-->
   <link
@@ -184,6 +198,7 @@
     <axis
       xyz="1 0 0" />
     <limit lower="0.0" upper="1.0472" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
   <!--LLINK3-->
   <link
@@ -239,7 +254,8 @@
       link="llink3" />
     <axis
       xyz="1 0 0" />
-    <limit lower="-0.5236" upper="0.8727" effort="2.0" velocity="0.2"/>
+    <limit lower="-0.3491" upper="0.8727" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
   <!--RLINK1-->
   <link
@@ -296,6 +312,7 @@
     <axis
       xyz="1 0 0" />
     <limit lower="-0.6981" upper="0.5236" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
   <!--RLINK2-->
   <link
@@ -352,6 +369,7 @@
     <axis
       xyz="1 0 0" />
     <limit lower="0.0" upper="1.0472" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>  
   <!--RLINK3-->
   <link
@@ -407,7 +425,8 @@
       link="rlink3" />
     <axis
       xyz="1 0 0" />
-    <limit lower="-0.5236" upper="0.8727" effort="2.0" velocity="0.2"/>  
+    <limit lower="-0.3491" upper="0.8727" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
   <!--  -->
   <transmission name="ltran1">
