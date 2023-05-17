@@ -26,15 +26,15 @@
     <material>Gazebo/Blue</material>
   </gazebo>
 
-  <!-- <joint name="imu_joint" type="fixed">
+  <joint name="imu_joint" type="fixed">
     <parent link="base"/>
     <child link="imu_link"/>
     <origin xyz="0.0 0.0 1.003 " rpy="0.0 0.0 3.1416"/> 
-  
-  </joint>   -->
+    <!-- 1.12 -->
+  </joint>  
 
   <!--IMU-->
-  <!-- <link name="imu_link"/>
+  <link name="imu_link"/>
 
   <gazebo reference="imu_link">
     <gravity>true</gravity>
@@ -55,7 +55,7 @@
       </plugin>
       <pose>0 0 0 0 0 0</pose>
     </sensor>
-  </gazebo> -->
+  </gazebo>
 
   <!--BASE_LINK-->
   <link
