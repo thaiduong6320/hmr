@@ -26,22 +26,29 @@
     <material>Gazebo/Blue</material>
   </gazebo>
 
+  <joint name="imu_joint" type="fixed">
+    <parent link="base"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 1.4 " rpy="0.0 0.0 3.1416"/> 
+    <!-- 1.12 -->
+  </joint>  
+
   <!--BASE_LINK-->
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.000103296813793522 -0.0184749995894324 -0.00709986514009202"
+        xyz="-8.1485E-05 0.040306 -0.00093209"
         rpy="0 0 0" />
       <mass
-        value="0.933836944447792" />
+        value="2.4018" />
       <inertia
-        ixx="0.00139201398308306"
-        ixy="-2.82901658884336E-12"
-        ixz="4.14929438991966E-12"
-        iyy="0.00736197315629375"
-        iyz="-8.0885885721078E-10"
-        izz="0.00614175111526735" />
+        ixx="0.0070769"
+        ixy="-2.7325E-07"
+        ixz="1.9337E-07"
+        iyy="0.015485"
+        iyz="-1.2071E-07"
+        izz="0.009591" />
     </inertial>
     <visual>
       <origin
@@ -73,37 +80,23 @@
     <child link="base_link"/>
     <origin xyz="0.0 0.0 1.4 " rpy="0.0 0.0 3.1416"/> 
     <!-- 1.12 -->
-  </joint>
-
-  <!--IMU-->
-  
-  <gazebo>
-    <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
-      <alwaysOn>true</alwaysOn>
-      <bodyName>base</bodyName>
-      <topicName>imu</topicName>
-      <serviceName>imu_service</serviceName>
-      <gaussianNoise>0.0</gaussianNoise>
-      <updateRate>20.0</updateRate>
-    </plugin>
-  </gazebo>
-
+  </joint>  
   <!--LLINK1-->
   <link
     name="llink1">
     <inertial>
       <origin
-        xyz="0.0499999851262689 -0.248500614775013 5.33671345059814E-05"
+        xyz="0.056084 -0.21548 -1.1057E-06"
         rpy="0 0 0" />
       <mass
-        value="0.509664464543895" />
+        value="0.43137" />
       <inertia
-        ixx="0.00405279295169879"
-        ixy="-5.17821013423379E-16"
-        ixz="-1.86028405386162E-17"
-        iyy="0.000257140430774596"
-        iyz="2.20410095949559E-06"
-        izz="0.0041884713527824" />
+        ixx="0.0026126"
+        ixy="-1.5474E-07"
+        ixz="-5.4626E-08"
+        iyy="0.00020436"
+        iyz="-9.8E-06"
+        izz="0.0027266" />
     </inertial>
     <visual>
       <origin
@@ -134,7 +127,7 @@
     name="ljoint1"
     type="revolute">
     <origin
-      xyz="0.12 0.06 -0.06"
+      xyz="0.1135 0.04 -0.06"
       rpy="1.5708 0 0" />
     <parent
       link="base_link" />
@@ -150,17 +143,17 @@
     name="llink2">
     <inertial>
       <origin
-        xyz="0.0500545282509017 -0.234393633663144 0.00550026352716933"
+        xyz="0.054446 -0.17796 -0.0015786"
         rpy="0 0 0" />
       <mass
-        value="0.442265777754145" />
+        value="0.45541" />
       <inertia
-        ixx="0.0040117979862963"
-        ixy="-5.09697896497051E-16"
-        ixz="-2.77164071387431E-17"
-        iyy="0.000241596436981563"
-        iyz="-1.10278899850188E-06"
-        izz="0.00416183117175302" />
+        ixx="0.002625"
+        ixy="6.5245E-19"
+        ixz="-3.637E-17"
+        iyy="0.00023283"
+        iyz="4.9149E-06"
+        izz="0.0027437" />
     </inertial>
     <visual>
       <origin
@@ -191,7 +184,7 @@
     name="ljoint2"
     type="revolute">
     <origin
-      xyz="0 -0.5 0"
+      xyz="0 -0.438 0"
       rpy="0 0 0" />
     <parent
       link="llink1" />
@@ -207,17 +200,17 @@
     name="llink3">
     <inertial>
       <origin
-        xyz="0.0501466994062446 -0.0351041894822217 0.0405185729509365"
+        xyz="0.049198 -0.036675 0.049331"
         rpy="0 0 0" />
       <mass
-        value="0.164387087553345" />
+        value="0.29119" />
       <inertia
-        ixx="0.000390399624612182"
-        ixy="6.46553823154572E-18"
-        ixz="7.16521493881578E-17"
-        iyy="0.000442516689346383"
-        iyz="-8.18654011913839E-11"
-        izz="8.27552994226968E-05" />
+        ixx="0.00061049"
+        ixy="1.3662E-07"
+        ixz="-9.6685E-08"
+        iyy="0.00068435"
+        iyz="-6.0356E-08"
+        izz="0.00011606" />
     </inertial>
     <visual>
       <origin
@@ -248,7 +241,7 @@
     name="ljoint3"
     type="revolute">
     <origin
-      xyz="0 -0.5 0"
+      xyz="0.00735 -0.44 0"
       rpy="0 0 0" />
     <parent
       link="llink2" />
@@ -264,17 +257,17 @@
     name="rlink1">
     <inertial>
       <origin
-        xyz="-0.0500000148736693 -0.248500614774999 5.33671345059189E-05"
+        xyz="-0.046266 -0.21548 -1.1057E-06"
         rpy="0 0 0" />
       <mass
-        value="0.509664464543895" />
+        value="0.43137" />
       <inertia
-        ixx="0.00405279295169879"
-        ixy="-5.17781100332924E-16"
-        ixz="-1.86069004433025E-17"
-        iyy="0.000257140430774596"
-        iyz="2.20410095949557E-06"
-        izz="0.0041884713527824" />
+        ixx="0.0026126"
+        ixy="-1.5474E-07"
+        ixz="-5.4626E-08"
+        iyy="0.00020436"
+        iyz="-9.8E-06"
+        izz="0.0027266" />
     </inertial>
     <visual>
       <origin
@@ -305,7 +298,7 @@
     name="rjoint1"
     type="revolute">
     <origin
-      xyz="-0.12 0.06 -0.06"
+      xyz="-0.12415 0.04 -0.06"
       rpy="1.5708 0 0" />
     <parent
       link="base_link" />
@@ -321,17 +314,17 @@
     name="rlink2">
     <inertial>
       <origin
-        xyz="-0.049945471749016 -0.234393633663131 0.00550026352714499"
+        xyz="-0.047904 -0.17796 -0.0015786"
         rpy="0 0 0" />
       <mass
-        value="0.442265777754145" />
+        value="0.45541" />
       <inertia
-        ixx="0.00401179798629629"
-        ixy="-5.09803878440693E-16"
-        ixz="-2.77168469663556E-17"
-        iyy="0.000241596436981563"
-        iyz="-1.10278899850179E-06"
-        izz="0.00416183117175302" />
+        ixx="0.002625"
+        ixy="6.3076E-19"
+        ixz="-3.6373E-17"
+        iyy="0.00023283"
+        iyz="4.9149E-06"
+        izz="0.0027437" />
     </inertial>
     <visual>
       <origin
@@ -362,7 +355,7 @@
     name="rjoint2"
     type="revolute">
     <origin
-      xyz="0 -0.5 0"
+      xyz="0 -0.438 0"
       rpy="0 0 0" />
     <parent
       link="rlink1" />
@@ -378,17 +371,17 @@
     name="rlink3">
     <inertial>
       <origin
-        xyz="-0.0498532993324217 -0.0351041894822506 0.040518572950845"
+        xyz="-0.045802 -0.036675 0.049331"
         rpy="0 0 0" />
       <mass
-        value="0.164387087553345" />
+        value="0.29119" />
       <inertia
-        ixx="0.000390399624612182"
-        ixy="6.46331811347987E-18"
-        ixz="7.16490435411506E-17"
-        iyy="0.000442516689346383"
-        iyz="-8.18654011935542E-11"
-        izz="8.27552994226968E-05" />
+        ixx="0.00061049"
+        ixy="1.3662E-07"
+        ixz="-9.6685E-08"
+        iyy="0.00068435"
+        iyz="-6.0356E-08"
+        izz="0.00011606" />
     </inertial>
     <visual>
       <origin
@@ -419,7 +412,7 @@
     name="rjoint3"
     type="revolute">
     <origin
-      xyz="0 -0.5 0"
+      xyz="0 -0.44 0"
       rpy="0 0 0" />
     <parent
       link="rlink2" />
