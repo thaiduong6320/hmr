@@ -6,6 +6,8 @@
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
   <arg name="debug" default="false"/>
+  
+  <arg name="imu_enable" default="true" />
 
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch" >

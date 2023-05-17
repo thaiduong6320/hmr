@@ -15,11 +15,11 @@
     </plugin>
   </gazebo>  
 
-  <link name="world"/>
+  <!-- <link name="world"/>
   <joint name="fixed" type="fixed">
     <parent link="world"/>
     <child link="base"/>
-  </joint>
+  </joint> -->
   <link name="base">
   </link>
   <gazebo reference="base">
@@ -37,6 +37,26 @@
   <link name="imu_link"/>
 
   <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu/data</topicName>
+        <bodyName>base</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <!-- <gazebo reference="imu_link">
     <sensor type="imu" name="imu">
       <always_on>true</always_on>
     </sensor>
@@ -52,7 +72,7 @@
       <gaussianNoise>0.0</gaussianNoise>
       <updateRate>20.0</updateRate>
     </plugin>
-  </gazebo>
+  </gazebo> -->
 
   <!--BASE_LINK-->
   <link
@@ -99,7 +119,7 @@
   <joint name="joint" type="fixed">
     <parent link="base"/>
     <child link="base_link"/>
-    <origin xyz="0.0 0.0 1.4 " rpy="0.0 0.0 3.1416"/> 
+    <origin xyz="0.0 0.0 1.25 " rpy="0.0 0.0 3.1416"/> 
     <!-- 1.12 -->
   </joint>  
   <!--LLINK1-->
