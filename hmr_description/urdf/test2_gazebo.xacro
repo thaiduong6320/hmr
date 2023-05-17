@@ -4,16 +4,10 @@
   xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:property name="PI" value="3.1415926535897931"/>
-  <!-- Import Rviz colors -->
-  <!-- <xacro:include filename="$(find hmr)/urdf/materials.xacro" /> -->
+  <!-- Import Gazebo -->
+  <xacro:include filename="$(find hmr)/hmr_description/urdf/gazebo.xacro" />
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <!-- <xacro:include filename="$(find hmr)/urdf/test2.gazebo" /> -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/hmr</robotNamespace>
-      <!-- <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
-    </plugin>
-  </gazebo>  
+
 
   <!-- The ft_sensor plugin -->  
   <!-- <gazebo>
@@ -31,9 +25,7 @@
   </joint> -->
   <link name="base">
   </link>
-  <gazebo reference="base">
-    <material>Gazebo/Blue</material>
-  </gazebo>
+
 
   <joint name="imu_joint" type="fixed">
     <parent link="base"/>
@@ -45,26 +37,6 @@
   <!--IMU-->
   <link name="imu_link"/>
 
-  <gazebo reference="imu_link">
-    <gravity>true</gravity>
-    <sensor name="imu_sensor" type="imu">
-      <always_on>true</always_on>
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <topic>__default_topic__</topic>
-      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-        <topicName>imu/data</topicName>
-        <bodyName>base</bodyName>
-        <updateRateHZ>10.0</updateRateHZ>
-        <gaussianNoise>0.0</gaussianNoise>
-        <xyzOffset>0 0 0</xyzOffset>
-        <rpyOffset>0 0 0</rpyOffset>
-        <frameName>imu_link</frameName>
-        <initialOrientationAsReference>false</initialOrientationAsReference>
-      </plugin>
-      <pose>0 0 0 0 0 0</pose>
-    </sensor>
-  </gazebo>
 
   <!--BASE_LINK-->
   <link
@@ -105,9 +77,7 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="base_link">
-    <material>Gazebo/Blue</material>
-  </gazebo>  
+
   <joint name="joint" type="fixed">
     <parent link="base"/>
     <child link="base_link"/>
@@ -153,9 +123,7 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="llink1">
-    <material>Gazebo/Blue</material>
-  </gazebo>    
+
   <joint
     name="ljoint1"
     type="revolute">
@@ -210,9 +178,7 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="llink2">
-    <material>Gazebo/Blue</material>
-  </gazebo>   
+  
   <joint
     name="ljoint2"
     type="revolute">
@@ -267,9 +233,7 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="llink3">
-    <material>Gazebo/Blue</material>
-  </gazebo>    
+   
   <joint
     name="ljoint3"
     type="revolute">
@@ -324,9 +288,7 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="rlink1">
-    <material>Gazebo/Blue</material>
-  </gazebo>    
+   
   <joint
     name="rjoint1"
     type="revolute">
@@ -381,9 +343,7 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="rlink2">
-    <material>Gazebo/Blue</material>
-  </gazebo>   
+   
   <joint
     name="rjoint2"
     type="revolute">
@@ -438,9 +398,7 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="rlink3">
-    <material>Gazebo/Blue</material>
-  </gazebo>    
+   
   <joint
     name="rjoint3"
     type="revolute">
