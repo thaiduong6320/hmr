@@ -4,14 +4,10 @@
   xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:property name="PI" value="3.1415926535897931"/>
-  <!-- Import Rviz colors -->
-  <!-- <xacro:include filename="$(find hmr)/urdf/materials.xacro" /> -->
-  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <!-- <xacro:include filename="$(find hmr)/urdf/test2.gazebo" /> -->
+
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/hmr</robotNamespace>
-      <!-- <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
     </plugin>
   </gazebo>  
 

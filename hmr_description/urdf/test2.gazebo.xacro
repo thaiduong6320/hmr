@@ -6,9 +6,8 @@
   <xacro:property name="PI" value="3.1415926535897931"/>
   <!-- Import Gazebo -->
   <xacro:include filename="$(find hmr)/hmr_description/urdf/gazebo.xacro" />
-  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-
-
+  <!-- Import Transmission -->
+  <xacro:include filename="$(find hmr)/hmr_description/urdf/transmission.xacro" />
   <!-- The ft_sensor plugin -->  
   <!-- <gazebo>
       <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
@@ -26,7 +25,6 @@
   <link name="base">
   </link>
 
-
   <joint name="imu_joint" type="fixed">
     <parent link="base"/>
     <child link="imu_link"/>
@@ -37,7 +35,6 @@
   <!--IMU-->
   <link name="imu_link">
   </link>
-
 
   <!--BASE_LINK-->
   <link
@@ -415,71 +412,5 @@
     <limit lower="-0.3491" upper="0.8727" effort="2.0" velocity="0.2"/>
     <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
-  <!--  -->
-  <transmission name="ltran1">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="ljoint1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="lmotor1">
-      <mechanicalReduction>1.0</mechanicalReduction>
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
-
-  <transmission name="ltran2">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="ljoint2">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="lmotor2">
-      <mechanicalReduction>1.0</mechanicalReduction>
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
-
-  <transmission name="ltran3">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="ljoint3">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="lmotor3">
-      <mechanicalReduction>1.0</mechanicalReduction>
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
-
-  <transmission name="rtran1">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rjoint1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="rmotor1">
-      <mechanicalReduction>1.0</mechanicalReduction>
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
-
-  <transmission name="rtran2">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rjoint2">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="rmotor2">
-      <mechanicalReduction>1.0</mechanicalReduction>
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
-
-  <transmission name="rtran3">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rjoint3">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="rmotor3">
-      <mechanicalReduction>1.0</mechanicalReduction>
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
 
 </robot>
