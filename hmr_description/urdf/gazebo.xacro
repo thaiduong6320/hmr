@@ -27,7 +27,6 @@
 
 
   <!--IMU-->
-  <link name="imu_link"/>
 
   <gazebo reference="imu_link">
     <gravity>true</gravity>
