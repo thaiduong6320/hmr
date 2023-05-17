@@ -35,7 +35,8 @@
   </joint>  
 
   <!--IMU-->
-  <link name="imu_link"/>
+  <link name="imu_link">
+  </link>
 
 
   <!--BASE_LINK-->
