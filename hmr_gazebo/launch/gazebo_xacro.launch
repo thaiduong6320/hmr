@@ -28,4 +28,16 @@
     args="-param robot_description -urdf -model hmr" />     
     
   <include file="$(find hmr)/hmr_control/launch/hmr_control.launch" />
+
+  <arg 
+    name="rvizconfig" 
+    default="$(find hmr)/hmr_description/rviz/urdf.rviz" />
+
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(arg rvizconfig)"
+    required="true" />
+
 </launch>
