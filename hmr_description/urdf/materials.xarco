@@ -1,5 +1,7 @@
-<?xml version="1.0"?>
-<robot>
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="hmr"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <material name="black">
     <color rgba="0.0 0.0 0.0 1.0"/>
