@@ -11,23 +11,7 @@
       <!-- <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
     </plugin>
   </gazebo>  
-
-  <!-- The ft_sensor plugin -->  
-  <!-- <gazebo>
-      <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
-          <updateRate>100.0</updateRate>
-          <topicName>ft_sensor_topic</topicName>
-          <jointName>schunk_wsg50_fixed_base_joint</jointName>
-      </plugin>
-  </gazebo> -->
-
-  <gazebo reference="base">
-    <material>Gazebo/Blue</material>
-  </gazebo>
-
-
   <!--IMU-->
-
   <gazebo reference="imu_link">
     <gravity>true</gravity>
     <sensor name="imu_sensor" type="imu">
@@ -49,17 +33,21 @@
     </sensor>
   </gazebo>
 
+  <!--BASE-->
+  <gazebo reference="base">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
   <!--BASE_LINK-->
-  
   <gazebo reference="base_link">
     <material>Gazebo/Blue</material>
   </gazebo>  
 
   <!--LLINK1-->
-  
   <gazebo reference="llink1">
     <material>Gazebo/Blue</material>
-  </gazebo>    
+  </gazebo> 
+  <!--F/T-->   
   <gazebo reference="ljoint1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
@@ -70,8 +58,8 @@
     <jointName>ljoint1</jointName>
     </plugin>
   </gazebo>
+
   <!--LLINK2-->
-  
   <gazebo reference="llink2">
     <material>Gazebo/Blue</material>
   </gazebo>
@@ -86,8 +74,8 @@
     <jointName>ljoint2</jointName>
     </plugin>
   </gazebo>
+
   <!--LLINK3-->
-  
   <gazebo reference="llink3">
     <material>Gazebo/Blue</material>
   </gazebo>
@@ -102,8 +90,8 @@
     <jointName>ljoint3</jointName>
     </plugin>
   </gazebo>
+
   <!--RLINK1-->
-  
   <gazebo reference="rlink1">
     <material>Gazebo/Blue</material>
   </gazebo>    
@@ -118,8 +106,8 @@
     <jointName>rjoint1</jointName>
     </plugin>
   </gazebo>
+
   <!--RLINK2-->
- 
   <gazebo reference="rlink2">
     <material>Gazebo/Blue</material>
   </gazebo>   
@@ -134,8 +122,8 @@
     <jointName>rjoint2</jointName>
     </plugin>
   </gazebo>
+
   <!--RLINK3-->
-  
   <gazebo reference="rlink3">
     <material>Gazebo/Blue</material>
   </gazebo>   
