@@ -74,7 +74,8 @@
   
   <gazebo reference="llink2">
     <material>Gazebo/Blue</material>
-  </gazebo>   
+  </gazebo>
+  <!--F/T-->
   <gazebo reference="ljoint2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
@@ -89,7 +90,8 @@
   
   <gazebo reference="llink3">
     <material>Gazebo/Blue</material>
-  </gazebo>    
+  </gazebo>
+  <!--F/T-->    
   <gazebo reference="ljoint3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
@@ -105,6 +107,7 @@
   <gazebo reference="rlink1">
     <material>Gazebo/Blue</material>
   </gazebo>    
+  <!--F/T-->
   <gazebo reference="rjoint1">
     <provideFeedback>true</provideFeedback>
   </gazebo>
@@ -120,6 +123,7 @@
   <gazebo reference="rlink2">
     <material>Gazebo/Blue</material>
   </gazebo>   
+  <!--F/T-->
   <gazebo reference="rjoint2">
     <provideFeedback>true</provideFeedback>
   </gazebo>
@@ -134,7 +138,8 @@
   
   <gazebo reference="rlink3">
     <material>Gazebo/Blue</material>
-  </gazebo>    
+  </gazebo>   
+  <!--F/T--> 
   <gazebo reference="rjoint3">
     <provideFeedback>true</provideFeedback>
   </gazebo>
