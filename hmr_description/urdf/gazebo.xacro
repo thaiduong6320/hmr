@@ -60,36 +60,90 @@
   <gazebo reference="llink1">
     <material>Gazebo/Blue</material>
   </gazebo>    
- 
+  <gazebo reference="ljoint1">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo>
+    <plugin name="lft_sensor1" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>100.0</updateRate>
+    <topicName>lft_sensor1_topic</topicName>
+    <jointName>ljoint1</jointName>
+    </plugin>
+  </gazebo>
   <!--LLINK2-->
   
   <gazebo reference="llink2">
     <material>Gazebo/Blue</material>
   </gazebo>   
- 
+  <gazebo reference="ljoint2">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo>
+    <plugin name="lft_sensor2" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>100.0</updateRate>
+    <topicName>lft_sensor2_topic</topicName>
+    <jointName>ljoint2</jointName>
+    </plugin>
+  </gazebo>
   <!--LLINK3-->
   
   <gazebo reference="llink3">
     <material>Gazebo/Blue</material>
   </gazebo>    
-
+  <gazebo reference="ljoint3">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo>
+    <plugin name="lft_sensor3" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>100.0</updateRate>
+    <topicName>lft_sensor3_topic</topicName>
+    <jointName>ljoint3</jointName>
+    </plugin>
+  </gazebo>
   <!--RLINK1-->
   
   <gazebo reference="rlink1">
     <material>Gazebo/Blue</material>
   </gazebo>    
- 
+  <gazebo reference="rjoint1">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo>
+    <plugin name="rft_sensor1" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>100.0</updateRate>
+    <topicName>rft_sensor1_topic</topicName>
+    <jointName>rjoint1</jointName>
+    </plugin>
+  </gazebo>
   <!--RLINK2-->
  
   <gazebo reference="rlink2">
     <material>Gazebo/Blue</material>
   </gazebo>   
- 
+  <gazebo reference="rjoint2">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo>
+    <plugin name="rft_sensor2" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>100.0</updateRate>
+    <topicName>rft_sensor2_topic</topicName>
+    <jointName>rjoint2</jointName>
+    </plugin>
+  </gazebo>
   <!--RLINK3-->
   
   <gazebo reference="rlink3">
     <material>Gazebo/Blue</material>
   </gazebo>    
-  
+  <gazebo reference="rjoint3">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo>
+    <plugin name="rft_sensor3" filename="libgazebo_ros_ft_sensor.so">
+    <updateRate>100.0</updateRate>
+    <topicName>rft_sensor3_topic</topicName>
+    <jointName>rjoint3</jointName>
+    </plugin>
+  </gazebo>
 
 </robot>
