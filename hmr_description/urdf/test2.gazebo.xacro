@@ -17,18 +17,18 @@
       </plugin>
   </gazebo> -->
 
-  <!-- <link name="world"/>
+  <link name="world"/>
   <joint name="fixed" type="fixed">
     <parent link="world"/>
     <child link="base"/>
-  </joint> -->
+  </joint>
   <link name="base">
   </link>
 
   <joint name="imu_joint" type="fixed">
     <parent link="base"/>
     <child link="imu_link"/>
-    <origin xyz="0.0 0.0 1.003 " rpy="0.0 0.0 3.1416"/> 
+    <origin xyz="0.0 0.0 1.4 " rpy="0.0 0.0 3.1416"/> 
     <!-- 1.12 -->
   </joint>  
 
@@ -79,8 +79,7 @@
   <joint name="joint" type="fixed">
     <parent link="base"/>
     <child link="base_link"/>
-    <origin xyz="0.0 0.0 1.003 " rpy="0.0 0.0 3.1416"/> 
-    <!-- 1.12 -->
+    <origin xyz="0.0 0.0 1.4 " rpy="0.0 0.0 3.1416"/> 
   </joint>  
   <!--LLINK1-->
   <link
