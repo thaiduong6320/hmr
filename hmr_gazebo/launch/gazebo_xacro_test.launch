@@ -39,5 +39,5 @@
     type="rviz"
     args="-d $(arg rvizconfig)"
     required="true" />
-
+  
 </launch>
