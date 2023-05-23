@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="hmr"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="PI" value="3.1415926535897931"/>
+  <!-- Import Gazebo -->
+  <xacro:include filename="$(find hmr)/hmr_description/urdf/gazebo.xacro" />
+  <!-- Import Transmission -->
+  <xacro:include filename="$(find hmr)/hmr_description/urdf/transmission.xacro" />
+
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base"/>
+  </joint>
+  <link name="base">
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base"/>
+    <child link="imu_link"/>
+    <origin xyz="0.0 0.0 1.4 " rpy="0.0 0.0 3.1416"/> 
+    <!-- 1.12 -->
+  </joint>  
+
+  <!--IMU-->
+  <link name="imu_link">
+  </link>
+
+  <!--BASE_LINK-->
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-8.1485E-05 0.040306 -0.00093209"
+        rpy="0 0 0" />
+      <mass
+        value="6.1014" />
+      <inertia
+        ixx="0.1975"
+        ixy="-0.00001"
+        ixz="0.00001"
+        iyy="0.15449"
+        iyz="-0.00032"
+        izz="0.17789" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint" type="fixed">
+    <parent link="base"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 1.4 " rpy="0.0 0.0 3.1416"/> 
+  </joint>  
+  <!--LLINK1-->
+  <link
+    name="llink1">
+    <inertial>
+      <origin
+        xyz="0.056084 -0.21548 -1.1057E-06"
+        rpy="0 0 0" />
+      <mass
+        value="1.7107" />
+      <inertia
+        ixx="0.11748"
+        ixy="-0.02081"
+        ixz="0"
+        iyy="0.0067"
+        iyz="-0.00209"
+        izz="0.12291" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/llink1.STL" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/llink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="ljoint1"
+    type="revolute">
+    <origin
+      xyz="0.1135 0.04 -0.06"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="llink1" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-0.6981" upper="0.5236" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
+  </joint>
+  <!--LLINK2-->
+  <link
+    name="llink2">
+    <inertial>
+      <origin
+        xyz="0.054446 -0.17796 -0.0015786"
+        rpy="0 0 0" />
+      <mass
+        value="1.7487" />
+      <inertia
+        ixx="0.09191"
+        ixy="-0.01716"
+        ixz="-0.00008"
+        iyy="0.00674"
+        iyz="-0.0001"
+        izz="0.09707" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/llink2.STL" />
+      </geometry>
+      <material name="green">
+        <color rgba="0.0 1.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/llink2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint
+    name="ljoint2"
+    type="revolute">
+    <origin
+      xyz="0 -0.438 0"
+      rpy="0 0 0" />
+    <parent
+      link="llink1" />
+    <child
+      link="llink2" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="0.0" upper="1.0472" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
+  </joint>
+  <!--LLINK3-->
+  <link
+    name="llink3">
+    <inertial>
+      <origin
+        xyz="0.049198 -0.036675 0.049331"
+        rpy="0 0 0" />
+      <mass
+        value="0.73" />
+      <inertia
+        ixx="0.00503"
+        ixy="-0.00132"
+        ixz="0.00177"
+        iyy="0.00575"
+        iyz="-0.00149"
+        izz="0.0033" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/llink3.STL" />
+      </geometry>
+      <material name="red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/llink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+   
+  <joint
+    name="ljoint3"
+    type="revolute">
+    <origin
+      xyz="0.00735 -0.44 0"
+      rpy="0 0 0" />
+    <parent
+      link="llink2" />
+    <child
+      link="llink3" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-0.3491" upper="0.8727" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
+  </joint>
+  <!--RLINK1-->
+  <link
+    name="rlink1">
+    <inertial>
+      <origin
+        xyz="-0.046266 -0.21548 -1.1057E-06"
+        rpy="0 0 0" />
+      <mass
+        value="1.7107" />
+      <inertia
+        ixx="0.11748"
+        ixy="0.01692"
+        ixz="0"
+        iyy="0.00498"
+        iyz="-0.00209"
+        izz="0.12119" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/rlink1.STL" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.0 1.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/rlink1.STL" />
+      </geometry>
+    </collision>
+  </link>
+   
+  <joint
+    name="rjoint1"
+    type="revolute">
+    <origin
+      xyz="-0.12415 0.04 -0.06"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rlink1" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-0.6981" upper="0.5236" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
+  </joint>
+  <!--RLINK2-->
+  <link
+    name="rlink2">
+    <inertial>
+      <origin
+        xyz="-0.047904 -0.17796 -0.0015786"
+        rpy="0 0 0" />
+      <mass
+        value="1.7487" />
+      <inertia
+        ixx="0.09191"
+        ixy="0.0147"
+        ixz="0.00021"
+        iyy="0.00557"
+        iyz="-0.0001"
+        izz="0.0959" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/rlink2.STL" />
+      </geometry>
+      <material name="green">
+        <color rgba="0.0 1.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/rlink2.STL" />
+      </geometry>
+    </collision>
+  </link>
+   
+  <joint
+    name="rjoint2"
+    type="revolute">
+    <origin
+      xyz="0 -0.438 0"
+      rpy="0 0 0" />
+    <parent
+      link="rlink1" />
+    <child
+      link="rlink2" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="0.0" upper="1.0472" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
+  </joint>  
+  <!--RLINK3-->
+  <link
+    name="rlink3">
+    <inertial>
+      <origin
+        xyz="-0.045802 -0.036675 0.049331"
+        rpy="0 0 0" />
+      <mass
+        value="0.73" />
+      <inertia
+        ixx="0.00503"
+        ixy="0.00123"
+        ixz="-0.00165"
+        iyy="0.00552"
+        iyz="-0.00149"
+        izz="0.00307" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/rlink3.STL" />
+      </geometry>
+      <material name="red">
+        <color rgba="1.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hmr/hmr_description/meshes/rlink3.STL" />
+      </geometry>
+    </collision>
+  </link>
+   
+  <joint
+    name="rjoint3"
+    type="revolute">
+    <origin
+      xyz="0 -0.44 0"
+      rpy="0 0 0" />
+    <parent
+      link="rlink2" />
+    <child
+      link="rlink3" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-0.3491" upper="0.8727" effort="2.0" velocity="0.2"/>
+    <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
+  </joint>
+
+</robot>
