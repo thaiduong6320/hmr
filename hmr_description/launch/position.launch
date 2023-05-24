@@ -1,7 +1,7 @@
 <launch>    
   <node 
     pkg="hmr" 
-    type="main.py"
-    name="main"
+    type="test_excel.py"
+    name="test_excel"
     output="screen" />
 </launch>

@@ -14,12 +14,12 @@ def control():
     rospy.init_node('hmr_control', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
-        lposition1 = math.pi*(-557)/3600
-        lposition2 = math.pi*39.38/180
-        lposition3 = math.pi*(-11.53)/180
-        rposition1 = math.pi*3.69/180
-        rposition2 = math.pi*(26.31)/180
-        rposition3 = math.pi*(-29.99)/180
+        lposition1 = math.pi*(20)*(-1)/180
+        lposition2 = math.pi*(-40)*(-1)/180
+        lposition3 = math.pi*(20)*(-1)/180
+        rposition1 = math.pi*(20)*(-1)/180
+        rposition2 = math.pi*(-40)*(-1)/180
+        rposition3 = math.pi*(20)*(-1)/180
         rospy.loginfo(lposition1)
         rospy.loginfo(lposition2)
         rospy.loginfo(lposition3)
