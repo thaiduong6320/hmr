@@ -16,7 +16,7 @@ def main():
     rospy.init_node('hmr_control', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
-        with open('/home/dev/hmr_ws/src/hmr/hmr_description/src/pose.csv', 'f') as csvfile:
+        with open('/home/dev/hmr_ws/src/hmr/hmr_description/src/pose.csv', 'r') as csvfile:
             spamreader = csvfile.read().split('\n')
             i = 0
             
