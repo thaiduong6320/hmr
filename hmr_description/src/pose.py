@@ -1,31 +1,29 @@
 import csv
 import time
-
+from std_msgs.msg import Float64
+import rospy
 with open('/home/dev/hmr_ws/src/hmr/hmr_description/src/pose.csv', 'r') as csvfile:
     spamreader = csvfile.read().split('\n')
     i = 0
     for row in spamreader:
         if i<7 :
             q_set = row.split(',')
-            lp1 = q_set[0]
-            lp2 = q_set[1]
-            lp3 = q_set[2]
-            rp1 = q_set[3]
-            rp2 = q_set[4]
-            rp3 = q_set[5]
-            # lpub1.publish(lp1)
-            # lpub2.publish(lp2)
-            # lpub3.publish(lp3)
-            # rpub1.publish(rp1)
-            # rpub2.publish(rp2)
-            # rpub3.publish(rp3)
+            f =[]
+            for item in q_set:
+                f.append(Float64(item))
+            lp1 = type(f[0])
+            lp2 = type(f[1])
+            lp3 = type(f[2])
+            rp1 = type(f[3])
+            rp2 = type(f[4])
+            rp3 = type(f[5])
+
             print(lp1)
             print(lp2)
             print(lp3)
             print(rp1)
             print(rp2)
             print(rp3)
-            # print(q_set[0])
             time.sleep(1)
             i = i + 1
         if i==7 :

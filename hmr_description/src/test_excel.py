@@ -23,12 +23,15 @@ def main():
             for row in spamreader:
                 if i<7 :
                     q_set = row.split(',')
-                    lp1 = q_set[1][0]
-                    lp2 = q_set[1][1]
-                    lp3 = q_set[1][2]
-                    rp1 = q_set[1][3]
-                    rp2 = q_set[1][4]
-                    rp3 = q_set[1][5]
+                    f =[]
+                    for item in q_set:
+                        f.append(float(item))
+                    lp1 = (f[0])
+                    lp2 = (f[1])
+                    lp3 = (f[2])
+                    rp1 = (f[3])
+                    rp2 = (f[4])
+                    rp3 = (f[5])
 
                     lpub1.publish(lp1)
                     lpub2.publish(lp2)
