@@ -3,7 +3,7 @@
   name="hmr"
   xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:property name="pi" value="3.141592653589793"/>
+  <xacro:property name="PI" value="3.1415926535897931"/>
   <!-- Import Gazebo -->
   <xacro:include filename="$(find hmr)/hmr_description/urdf/gazebo.xacro" />
   <!-- Import Transmission -->
@@ -126,7 +126,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="10" friction="0.0"/>
-    <limit lower="${-pi*50}" upper="${pi*40}" effort="2.0" velocity="1"/>
+    <limit lower="-0.87266" upper="0.69813" effort="2.0" velocity="1"/>
     <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
   <!--LLINK2-->
@@ -182,7 +182,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="10" friction="0.0"/>
-    <limit lower="0.0" upper="${pi*65}" effort="2.0" velocity="1"/>
+    <limit lower="0.0" upper="1.13446" effort="2.0" velocity="1"/>
     <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
   <!--LLINK3-->
@@ -238,7 +238,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="10" friction="0.0"/>
-    <limit lower="${-pi*20}" upper="${pi*40}" effort="2.0" velocity="1"/>
+    <limit lower="-0.34907" upper="0.69813" effort="2.0" velocity="1"/>
     <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
   <!--RLINK1-->
@@ -294,7 +294,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="10" friction="0.0"/>
-    <limit lower="${-pi*50}" upper="${pi*40}" effort="2.0" velocity="1"/>
+    <limit lower="-0.87266" upper="0.69813" effort="2.0" velocity="1"/>
     <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
   <!--RLINK2-->
@@ -350,7 +350,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="10" friction="0.0"/>
-    <limit lower="0.0" upper="${pi*65}" effort="2.0" velocity="1"/>
+    <limit lower="0.0" upper="1.13446" effort="2.0" velocity="1"/>
     <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>  
   <!--RLINK3-->
@@ -406,7 +406,7 @@
     <axis
       xyz="1 0 0" />
     <dynamics damping="10" friction="0.0"/>
-    <limit lower="${-pi*20}" upper="${pi*40}" effort="2.0" velocity="1"/>
+    <limit lower="-0.34907" upper="0.69813" effort="2.0" velocity="1"/>
     <!-- <safety_controller soft_lower_limit="" soft_upper_limit="" k_position="" k_velocity=""/> -->
   </joint>
 
