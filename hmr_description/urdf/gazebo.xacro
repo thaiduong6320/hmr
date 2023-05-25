@@ -36,16 +36,22 @@
   <!--BASE-->
   <gazebo reference="base">
     <material>Gazebo/Blue</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
   </gazebo>
 
   <!--BASE_LINK-->
   <gazebo reference="base_link">
     <material>Gazebo/Blue</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
   </gazebo>  
 
   <!--LLINK1-->
   <gazebo reference="llink1">
     <material>Gazebo/Blue</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
   </gazebo> 
   <!--F/T-->   
   <gazebo reference="ljoint1">
@@ -62,6 +68,8 @@
   <!--LLINK2-->
   <gazebo reference="llink2">
     <material>Gazebo/Blue</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
   </gazebo>
   <!--F/T-->
   <gazebo reference="ljoint2">
@@ -78,6 +86,10 @@
   <!--LLINK3-->
   <gazebo reference="llink3">
     <material>Gazebo/Blue</material>
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
   </gazebo>
   <!--F/T-->    
   <gazebo reference="ljoint3">
@@ -94,6 +106,8 @@
   <!--RLINK1-->
   <gazebo reference="rlink1">
     <material>Gazebo/Blue</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
   </gazebo>    
   <!--F/T-->
   <gazebo reference="rjoint1">
@@ -110,6 +124,8 @@
   <!--RLINK2-->
   <gazebo reference="rlink2">
     <material>Gazebo/Blue</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
   </gazebo>   
   <!--F/T-->
   <gazebo reference="rjoint2">
@@ -126,6 +142,10 @@
   <!--RLINK3-->
   <gazebo reference="rlink3">
     <material>Gazebo/Blue</material>
+    <kp>100000.0</kp>
+    <kd>100.0</kd>
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
   </gazebo>   
   <!--F/T--> 
   <gazebo reference="rjoint3">
