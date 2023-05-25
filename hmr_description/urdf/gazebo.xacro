@@ -3,7 +3,7 @@
   name="hmr"
   xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:property name="PI" value="3.1415926535897931"/>
+  <!-- <xacro:property name="PI" value="3.1415926535897931"/> -->
   
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
