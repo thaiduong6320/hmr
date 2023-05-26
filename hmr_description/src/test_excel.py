@@ -16,12 +16,12 @@ def main():
     rospy.init_node('hmr_control', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():
-        with open('/home/dev/hmr_ws/src/hmr/hmr_description/src/data3.csv', 'r') as csvfile:
+        with open('/home/dev/hmr_ws/src/hmr/hmr_description/src/data5.csv', 'r') as csvfile:
             spamreader = csvfile.read().split('\n')
             i = 0
             
             for row in spamreader:
-                if i<202 :
+                if i<52:
                     q_set = row.split(',')
                     f =[]
                     for item in q_set:
@@ -41,9 +41,9 @@ def main():
                     rpub3.publish(rp3)
                     # time.sleep(0.01)
                     i = i + 1
-                if i==202 :
-                    time.sleep(0.2)
-                time.sleep(0.2)
+                if i==52 :
+                    time.sleep(0.1)
+                time.sleep(0.1)
         # time.sleep(5)
         # lpub1.publish(0)
         # lpub2.publish(0)
