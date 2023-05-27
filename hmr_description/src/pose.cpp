@@ -12,6 +12,17 @@
 
 using namespace std;
 
+string split(string str, string delimiter){
+    size_t pos = 0;
+    string token;
+    while ((pos = str.find(delimiter)) != string::npos) {
+        token = str.substr(0, pos);
+        cout << token << endl;
+        str.erase(0, pos + delimiter.length());
+    }
+    return str;
+}
+
 int main(int argc, char **argv)
 {
     string lp1;
@@ -20,7 +31,7 @@ int main(int argc, char **argv)
     string rp1;
     string rp2;
     string rp3;
-    string filename("/home/dev/hmr_ws/src/hmr/hmr_description/src/pose.csv");
+    string filename("pose.csv");
     vector<string> lines;
     string line;
     // const char *f;
@@ -37,18 +48,28 @@ int main(int argc, char **argv)
     while (getline(input_file, line, '\n')){
         lines.push_back(line);//Save line
     }
-    for (int i = 0; i < 7; i++)
-    {   
-        string f(string lines[], ',');
-        // f = lines[i].c_str();
-        // const char *token;
-        // token = strtok(f, s);
-        // while (token != NULL)
-        // {
-        //     token = strtok(NULL,s);
-        // }
+    int i = 0;
+    
+    if(i<7)
+    {
+        // string f(string lines[], ",");
+        string f = {lines[i].c_str()};
+        float k = stof(split(f,","));
+        // float num_float = stof(k);
+        cout << k << endl;
+        i = i + 1;
+    }
+    // for (int i = 0; i < 7; i++)
+    // {   
+    //     // string f(string lines[], ",");
+    //     string f = {lines[i].c_str()};
+    //     float k = stof(split(f,","));
+    //     // float num_float = stof(k);
+    //     cout << k << endl;
+    // }
+    if(i==7)
+    {
         
-        // cout << f << endl;
     }
     input_file.close();
     return 0;
