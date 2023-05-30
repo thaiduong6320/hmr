@@ -5,45 +5,58 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <cctype>
+#include <cstring>
 #include "unistd.h"
+#include <cassert>
 
 using namespace std;
 
+string split(string str, string delimiter){
+    size_t pos = 0;
+    string token;
+    while ((pos = str.find(delimiter)) != string::npos) {
+        token = str.substr(0, pos);
+        cout << token << endl;
+        str.erase(0, pos + delimiter.length());
+    }
+    return str;
+}
+
 int main(int argc, char **argv)
 {
-  string lp1;
-  string lp2;
-  string lp3;
-  string rp1;
-  string rp2;
-  string rp3;
-  string filename("/home/dev/hmr_ws/src/hmr/hmr_description/src/pose.csv");
-  // Khai báo vector để lưu các dòng đọc được
-  vector<string> lines;
-  string line;
-  //Mở file bằng ifstream
-  ifstream input_file(filename);
-  //Kiểm tra file đã mở thành công chưa
-  if (!input_file.is_open()) {
-      cerr << "Could not open the file - '"
-          << filename << "'" << endl;
-      return EXIT_FAILURE;
-  }
-  //Đọc từng dòng trong
-  while (getline(input_file, line, ',')){
-      lines.push_back(line);//Lưu từng dòng như một phần tử vào vector lines.
-  }
-  //Xuất từng dòng từ lines và in ra màn hình
-  for (const auto &i : lines)
-      cout << i << endl;
-      sleep(1);
-      // lp1 = (i[0]);
-      // lp2 = (i[1]);
-      // lp3 = (i[2]);
-      // rp1 = (i[3]);
-      // rp2 = (i[4]);
-      // rp3 = (i[5]);
-  //Đóng file
-  input_file.close();
-  return 0;
+    string lp1;
+    string lp2;
+    string lp3;
+    string rp1;
+    string rp2;
+    string rp3;
+    string filename("/home/dev/hmr_ws/src/hmr/hmr_description/src/pose.csv");
+    vector<string> lines;
+    string line;
+    
+    //Open file with ifstream
+    ifstream input_file(filename);
+    //Check open file
+    if (!input_file.is_open()) {
+        cerr << "Could not open the file - '"
+            << filename << "'" << endl;
+        return EXIT_FAILURE;
+    }
+    //Read line
+    while (getline(input_file, line, '\n')){
+        lines.push_back(line);//Save line
+    }
+    
+    for(int i = 0;i<7;i++)
+    {
+        string f = {lines[i].c_str()};
+        float k = stof(split(f,","));
+        cout << k << endl;
+        i = i + 1;
+
+    }
+
+    input_file.close();
+    return 0;
 }

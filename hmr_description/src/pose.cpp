@@ -31,11 +31,10 @@ int main(int argc, char **argv)
     string rp1;
     string rp2;
     string rp3;
-    string filename("pose.csv");
+    string filename("/home/dev/hmr_ws/src/hmr/hmr_description/src/pose.csv");
     vector<string> lines;
     string line;
-    // const char *f;
-    // const char *s = ",";
+    int i = 0;
     //Open file with ifstream
     ifstream input_file(filename);
     //Check open file
@@ -45,32 +44,19 @@ int main(int argc, char **argv)
         return EXIT_FAILURE;
     }
     //Read line
-    while (getline(input_file, line, '\n')){
+    while (getline(input_file, line, '\n'))
+    {
         lines.push_back(line);//Save line
+        if (i<7)
+        {
+            string f = {lines[i].c_str()};
+            float k[] = {stof(split(f,","))};
+            cout << k[0][0] << endl;
+            sleep(1);
+            i = i + 1;
+        }
     }
-    int i = 0;
     
-    if(i<7)
-    {
-        // string f(string lines[], ",");
-        string f = {lines[i].c_str()};
-        float k = stof(split(f,","));
-        // float num_float = stof(k);
-        cout << k << endl;
-        i = i + 1;
-    }
-    // for (int i = 0; i < 7; i++)
-    // {   
-    //     // string f(string lines[], ",");
-    //     string f = {lines[i].c_str()};
-    //     float k = stof(split(f,","));
-    //     // float num_float = stof(k);
-    //     cout << k << endl;
-    // }
-    if(i==7)
-    {
-        
-    }
     input_file.close();
     return 0;
 }
