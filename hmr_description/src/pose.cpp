@@ -51,7 +51,8 @@ int main(int argc, char **argv)
         {
             string f = {lines[i].c_str()};
             float k[] = {stof(split(f,","))};
-            cout << k[0][0] << endl;
+            char arr[]  = "k";
+            cout << arr << endl;
             sleep(1);
             i = i + 1;
         }
